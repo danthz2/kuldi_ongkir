@@ -1,4 +1,4 @@
-class City {
+class KotaModel {
   String? cityId;
   String? provinceId;
   String? province;
@@ -6,15 +6,9 @@ class City {
   String? cityName;
   String? postalCode;
 
-  City(
-      {this.cityId,
-      this.provinceId,
-      this.province,
-      this.type,
-      this.cityName,
-      this.postalCode});
+  KotaModel({this.cityId, this.provinceId, this.province, this.type, this.cityName, this.postalCode});
 
-  City.fromJson(Map<String, dynamic> json) {
+  KotaModel.fromJson(Map<String, dynamic> json) {
     cityId = json['city_id'];
     provinceId = json['province_id'];
     province = json['province'];
@@ -34,8 +28,8 @@ class City {
     return data;
   }
 
-  static List<City> fromJsonList(List list) {
-    if (list.isEmpty) return List<City>.empty();
-    return list.map((item) => City.fromJson(item)).toList();
+  static List<KotaModel> fromJsonList(List list) {
+    if (list.isEmpty) return List<KotaModel>.empty();
+    return list.map((item) => KotaModel.fromJson(item)).toList();
   }
 }
